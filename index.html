@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Book Tickets</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <form class="col-6" action="/form" method="POST">
+                <fieldset>
+                    <legend>Booking Details</legend>
+                    <div>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="numTickets">No. of Tickets:</label>
+                        <input type="number" id="numTickets" name="numTickets" required min=1 max=4>
+                    </div>
+                    <div>
+                        <span>Gender:</span>
+                        <br>
+                        <span>
+                            <input type="radio" name="gender" value="Male">Male
+                            <input type="radio" name="gender" value="Female">Female
+                        </span>
+                    </div>
+                    <div>
+                        <span>Select your favourite team:</span>
+                        <select name="team" onchange="teamSelected(this.value)">
+                            <option value="">Please select a team:</option>
+                            <option value="Avengers">Avengers</option>
+                            <option value="JLA">Justice League</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <span>Select your favourite hero:</span>
+                        <select name="hero" id="hero" disabled>
+
+                        </select>
+                    </div>
+                    <div>
+                        <span>Remarks:</span>
+                        <br>
+                        <textarea name="remarks" cols=50 rows=12></textarea>
+                    </div>
+
+                    <div class="submit">
+                        <input type="submit" value="Submit" class="btn btn-primary">
+                    </div>
+                </fieldset>
+            </form>
+            <div class="col-6">
+                <canvas id="teamBallot"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js" integrity="sha256-MZo5XY1Ah7Z2Aui4/alkfeiq3CopMdV/bbkc/Sh41+s="
+        crossorigin="anonymous"></script>
+    <script src="/javascripts/teamSelected.js"></script>
+    <script src="/javascripts/chartAjax.js"></script>
+</body>
+
+</html>
